@@ -1,3 +1,7 @@
+const fs = require('fs')
+
+
+//read file
 
 const readStream = fs.createReadStream('./docs/blog3.txt', { encoding: 'utf8'} ); 
 //encoding translate data into human readable code so do not need toStrong()
@@ -21,3 +25,5 @@ readStream.pipe(writeStream); //does the same thing as lines 12-21
 readStream.on('end', () => {
     console.log('the file has been read successfully');
 }  //.on is a data event listener listening for a data event
+
+)
