@@ -26,3 +26,36 @@ const server = http.createServer((req, res) => {
   } else {
     path += "404.php";
     res.statusCode = '404';
+
+  }
+
+  // switch(req.url) {
+  //     case '/':
+  //         path += 'index.html';
+  //         break;
+  //     case '/about':
+  //         path += 'about.php';
+  //         break;
+  //    default:
+  //         path += '404.php';
+  //         break;
+  // }
+
+  //reading and writing files with file system
+  //send an html file
+  fs.readFile(path, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end();
+    } else {
+      // res.write(data);  if only sending back 1 thing then can add data as parameter to res.end()
+      // res.end();
+
+      res.end(data); //since only sending back one thing can put data as param
+    }
+  });
+});
+
+server.listen(3000, "localhost", () => {
+  console.log("listening on port 3000");
+});
