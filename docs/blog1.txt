@@ -1,0 +1,1 @@
+this is new text written from the writefile method and it updates blog1

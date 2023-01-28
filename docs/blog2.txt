@@ -1,0 +1,1 @@
+This method checks to see if there is already this path, if there is, it will replace the contents with whatever this is. If there isn't a path then it will create a new directory
